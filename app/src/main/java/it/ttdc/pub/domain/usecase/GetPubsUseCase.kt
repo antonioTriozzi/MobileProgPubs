@@ -29,9 +29,8 @@ class GetPubsUseCase @Inject constructor(
                 try{
 
                 val data = remoteRepo.getPubs()
-
-                    localRepo.insertPubs(data)
-                    emit(Resource.Success(data))
+                localRepo.insertPubs(data)
+                emit(Resource.Success(data))
 
                 } catch (e: Exception) {
                     e.printStackTrace()
