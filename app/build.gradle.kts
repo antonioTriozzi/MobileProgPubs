@@ -4,16 +4,19 @@ plugins {
     alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.devtools.ksp)
 
+    /* Plugin serialization */
+    alias(libs.plugins.jetbrains.serialization)
+
 }
 
 android {
     namespace = "it.ttdc.pub"
-    compileSdk = 36
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "it.ttdc.pub"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -39,6 +42,9 @@ android {
     buildFeatures {
         compose = true
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+    }
 }
 
 dependencies {
@@ -57,6 +63,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.kotlinx.serialization.json)
 
     // Hilt
     implementation(libs.hilt.android)

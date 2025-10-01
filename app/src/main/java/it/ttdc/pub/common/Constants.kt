@@ -1,4 +1,4 @@
 package it.ttdc.pub.common
-
-const val BASE_URL = ""
-const val API_DATA = "pubs"
+//api that give us pubs info
+const val BASE_URL = "https://overpass-api.de/api/interpreter"
+const val API_DATA = "pubs" //may be not needed
